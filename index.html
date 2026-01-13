@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qur'an Companion</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app-container">
+        <main id="main-content">
+            <div class="screen splash-screen active">
+                <div class="logo">
+                    <ion-icon name="book-outline"></ion-icon>
+                </div>
+                <h1>Qur'an Companion</h1>
+                <p>VISUALIZING THE INVISIBLE REWARD</p>
+                <div class="spinner"></div>
+            </div>
+            <div class="screen welcome-screen">
+                <div class="illustration">
+                    <!-- Placeholder for illustration -->
+                    <ion-icon name="leaf-outline"></ion-icon>
+                </div>
+                <h2>A Social Spiritual Ecosystem</h2>
+                <p>Build consistency, earn Hasanat, and connect with your community.</p>
+                <button class="btn btn-primary" data-target="register-screen">Get Started</button>
+                <button class="btn btn-link" data-target="login-screen">Already have an account? Login</button>
+            </div>
+            <div class="screen login-screen">
+                <h2 class="screen-title">Welcome Back</h2>
+                <form data-next="quiz-screen">
+                    <div class="form-group">
+                        <input type="email" placeholder="Email or Phone" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button type="button" class="btn btn-link" data-target="register-screen">Don't have an account? Register</button>
+                </form>
+            </div>
+            <div class="screen register-screen">
+                <h2 class="screen-title">Create Account</h2>
+                <form data-next="quiz-screen">
+                    <div class="form-group">
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email or Phone" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Confirm Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                     <button type="button" class="btn btn-link" data-target="login-screen">Already have an account? Login</button>
+                </form>
+            </div>
+            <div class="screen quiz-screen">
+                 <h2 class="screen-title">Personalize Your Experience</h2>
+                 <p><span id="quiz-step"></span> </p>
+                 <div class="quiz-question">
+                     <p>What's your Arabic reading level?</p>
+                     <button class="quiz-option" data-value="beginner">Beginner</button>
+                     <button class="quiz-option" data-value="intermediate">Intermediate</button>
+                     <button class="quiz-option" data-value="advanced">Advanced</button>
+                 </div>
+                 <button class="btn btn-primary" data-target="home-screen">Continue</button>
+            </div>
+            <div class="screen home-screen" data-nav="true">
+                <div class="home-header">
+                    <h3>Assalamu Alaikum, Ahmed</h3>
+                    <p>12 Rajab 1447</p>
+                </div>
+                <div class="card prayer-card">
+                    <div id="prayer-summary">
+                        <p>Fajr in 2h 30m <ion-icon name="chevron-down-outline"></ion-icon></p>
+                    </div>
+                    <div id="prayer-details" class="hidden">
+                        <ul>
+                            <li>Fajr: 05:42 AM</li>
+                            <li>Dhuhr: 12:30 PM</li>
+                            <li>Asr: 03:45 PM</li>
+                            <li>Maghrib: 05:32 PM</li>
+                            <li>Isha: 07:00 PM</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card hasanat-card">
+                    <div class="hasanat-icon">
+                        <ion-icon name="diamond-outline"></ion-icon>
+                    </div>
+                    <div class="hasanat-info">
+                        <p>Your Hasanat Today</p>
+                        <h3>+1,250</h3>
+                    </div>
+                </div>
+                <div class="quick-actions">
+                    <a href="#" class="action-item" data-target="quran-index-screen">
+                        <ion-icon name="book-outline"></ion-icon>
+                        <span>Read</span>
+                    </a>
+                    <a href="#" class="action-item">
+                        <ion-icon name="headset-outline"></ion-icon>
+                        <span>Listen</span>
+                    </a>
+                    <a href="#" class="action-item" data-target="focus-setup-screen">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <span>Focus</span>
+                    </a>
+                     <a href="#" class="action-item">
+                        <ion-icon name="heart-circle-outline"></ion-icon>
+                        <span>Dhikr</span>
+                    </a>
+                </div>
+                <div class="daily-deen">
+                    <h4>Daily Deen Activity</h4>
+                    <div class="feed-post-preview">
+                        <div class="post-header">
+                            <ion-icon name="person-circle-outline"></ion-icon>
+                            <p><b>Omar</b> completed Juz 3!</p>
+                        </div>
+                        <div class="post-reactions">
+                            <span>🤲 SubhanAllah (23)</span>
+                            <span>💬 Comment</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="screen quran-index-screen" data-nav="true">
+                <div class="screen-header">
+                    <h2 class="screen-title">Qur'an</h2>
+                    <ion-icon name="search-outline"></ion-icon>
+                </div>
+                <div class="tabs">
+                    <button class="tab-link active" data-tab="surah">Surah</button>
+                    <button class="tab-link" data-tab="juz">Juz</button>
+                </div>
+                <div id="surah" class="tab-content active">
+                    <div class="continue-reading">
+                        <p>Continue Reading</p>
+                        <p>Surah Al-Baqarah, Ayah 142</p>
+                    </div>
+                    <ul class="surah-list">
+                        <li data-target="quran-reading-screen">
+                            <div class="surah-info">
+                                <span class="surah-number">1.</span>
+                                <div class="surah-name">
+                                    <p>Al-Fatihah</p>
+                                    <p>The Opening</p>
+                                </div>
+                            </div>
+                            <div class="surah-arabic-name">
+                                <p>الفاتحة</p>
+                            </div>
+                        </li>
+                        <li data-target="quran-reading-screen">
+                            <div class="surah-info">
+                                <span class="surah-number">2.</span>
+                                <div class="surah-name">
+                                    <p>Al-Baqarah</p>
+                                    <p>The Cow</p>
+                                </div>
+                            </div>
+                            <div class="surah-arabic-name">
+                                <p>البقرة</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="juz" class="tab-content">
+                    <!-- Juz list will be here -->
+                </div>
+            </div>
+            <div class="screen quran-reading-screen" data-nav="true">
+                <div class="screen-header">
+                     <a href="#" data-target="quran-index-screen"><ion-icon name="arrow-back-outline"></ion-icon></a>
+                    <h2 class="screen-title">Al-Fatihah</h2>
+                    <div>
+                        <ion-icon name="settings-outline"></ion-icon>
+                        <ion-icon name="volume-medium-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="hasanat-counter">
+                    <p>+0 Hasanat 📿</p>
+                </div>
+                <div class="quran-content">
+                    <p class="arabic-text">بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ</p>
+                    <p class="arabic-text">الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ﴿٢﴾</p>
+                    <p class="arabic-text">الرَّحْمَـٰنِ الرَّحِيمِ ﴿٣﴾</p>
+                    <p class="arabic-text">مَالِكِ يَوْمِ الدِّينِ ﴿٤﴾</p>
+                    <p class="arabic-text">إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ ﴿٥﴾</p>
+                    <p class="arabic-text">اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ﴿٦﴾</p>
+                    <p class="arabic-text">صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ ﴿٧﴾</p>
+                </div>
+                <div class="reading-footer">
+                    <p>Ayah 7 / 7</p>
+                    <div class="reading-actions">
+                        <button class="btn-icon"><ion-icon name="text-outline"></ion-icon></button>
+                        <button class="btn-icon"><ion-icon name="book-outline"></ion-icon></button>
+                        <button class="btn btn-primary" data-target="focus-setup-screen"><ion-icon name="lock-closed-outline"></ion-icon> Focus</button>
+                    </div>
+                </div>
+            </div>
+            <div class="screen feed-screen" data-nav="true">
+                <div class="screen-header">
+                    <h2 class="screen-title">Daily Deen</h2>
+                    <ion-icon name="add-circle-outline"></ion-icon>
+                </div>
+                <div class="tabs">
+                    <button class="tab-link active">All</button>
+                    <button class="tab-link">Friends</button>
+                    <button class="tab-link">Groups</button>
+                </div>
+                <div class="feed-content">
+                    <div class="feed-post">
+                        <div class="post-header">
+                            <ion-icon name="person-circle-outline"></ion-icon>
+                            <p><b>Omar</b> completed Juz 3!</p>
+                        </div>
+                        <p class="post-body">Alhamdulillah, one step closer to completing the Qur'an this month. May Allah accept it from us all.</p>
+                        <div class="post-reactions">
+                            <button class="reaction-btn"><ion-icon name="heart-outline"></ion-icon> SubhanAllah (23)</button>
+                            <button class="reaction-btn"><ion-icon name="chatbubble-outline"></ion-icon> Comment</button>
+                        </div>
+                    </div>
+                    <div class="feed-post">
+                        <div class="post-header">
+                            <ion-icon name="person-circle-outline"></ion-icon>
+                            <p><b>Aisha</b> shared a reflection</p>
+                        </div>
+                        <div class="post-body reflection">
+                            <p class="arabic-text">"وَقُل رَّبِّ زِدْنِي عِلْمًا"</p>
+                            <p>[Surah Ta-Ha: 114]</p>
+                            <p>"This ayah reminds me to always seek knowledge..."</p>
+                        </div>
+                        <div class="post-reactions">
+                             <button class="reaction-btn"><ion-icon name="heart-outline"></ion-icon> Ameen (12)</button>
+                             <button class="reaction-btn"><ion-icon name="chatbubble-outline"></ion-icon> Comment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="screen progress-screen" data-nav="true">
+                <div class="screen-header">
+                    <h2 class="screen-title">Your Progress</h2>
+                    <ion-icon name="share-social-outline"></ion-icon>
+                </div>
+                <div class="card weekly-report">
+                    <h4>Focus Minutes</h4>
+                    <div class="bar-chart">
+                        <div class="bar" style="height: 60%;"><span class="day">M</span></div>
+                        <div class="bar" style="height: 80%;"><span class="day">T</span></div>
+                        <div class="bar" style="height: 50%;"><span class="day">W</span></div>
+                        <div class="bar" style="height: 90%;"><span class="day">T</span></div>
+                        <div class="bar" style="height: 40%;"><span class="day">F</span></div>
+                        <div class="bar" style="height: 20%;"><span class="day">S</span></div>
+                        <div class="bar" style="height: 70%;"><span class="day">S</span></div>
+                    </div>
+                </div>
+                <div class="card consistency-heatmap">
+                     <h4>Spiritual Consistency</h4>
+                     <div class="heatmap">
+                        <!-- Heatmap will be generated by JS -->
+                     </div>
+                </div>
+                 <div class="card hasanat-summary">
+                    <h4>Hasanat Earned</h4>
+                    <p>Total: 42,500 📿</p>
+                    <span>Top 5% this week</span>
+                </div>
+            </div>
+            <div class="screen focus-setup-screen">
+                <div class="screen-header">
+                    <a href="#" data-target="home-screen"><ion-icon name="arrow-back-outline"></ion-icon></a>
+                    <h2 class="screen-title">Focus Mode</h2>
+                </div>
+                <div class="focus-section">
+                    <h4>Block Distractions</h4>
+                    <p>Select apps to lock during your session</p>
+                    <div class="app-list">
+                        <div class="app-item"><ion-icon name="logo-instagram"></ion-icon> <span>Instagram</span> <input type="checkbox" checked></div>
+                        <div class="app-item"><ion-icon name="logo-tiktok"></ion-icon> <span>TikTok</span> <input type="checkbox" checked></div>
+                        <div class="app-item"><ion-icon name="logo-youtube"></ion-icon> <span>YouTube</span> <input type="checkbox"></div>
+                    </div>
+                </div>
+                <div class="focus-section">
+                    <h4>Set Your Goal</h4>
+                    <div class="form-group">
+                        <label for="surah-select">Select Surah:</label>
+                        <select id="surah-select">
+                            <option value="1">Al-Fatihah</option>
+                            <!-- More surahs can be added here -->
+                        </select>
+                    </div>
+                    <div class="tabs">
+                        <button class="tab-link active" data-tab="time">Time</button>
+                        <button class="tab-link" data-tab="pages">Pages</button>
+                    </div>
+                    <div id="time" class="tab-content active">
+                        <input type="range" min="5" max="60" value="15" class="slider">
+                        <p class="slider-value">15 min</p>
+                    </div>
+                    <div id="pages" class="tab-content">
+                        <input type="range" min="1" max="20" value="5" class="slider">
+                        <p class="slider-value">5 pages</p>
+                    </div>
+                </div>
+                <button class="btn btn-primary" data-target="focus-active-screen">
+                    <ion-icon name="lock-closed-outline"></ion-icon> Start Focus
+                </button>
+            </div>
+            <div class="screen focus-active-screen">
+                <div class="focus-header">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <h3>FOCUS MODE</h3>
+                </div>
+                <div class="focus-gamification">
+                    <div class="egg">🥚</div>
+                    <p>Break the Egg!</p>
+                </div>
+                <div class="focus-timer">
+                    <p>08:32</p>
+                    <span>remaining</span>
+                </div>
+                <div class="hasanat-counter">
+                    <p>+3,450 Hasanat 📿</p>
+                </div>
+                <p class="arabic-text">بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ</p>
+                <p class="arabic-text">الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ﴿٢﴾</p>
+                <p class="arabic-text">الرَّحْمَـٰنِ الرَّحِيمِ ﴿٣﴾</p>
+                <p class="arabic-text">مَالِكِ يَوْمِ الدِّينِ ﴿٤﴾</p>
+                <p class="arabic-text">إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ ﴿٥﴾</p>
+                <p class="arabic-text">اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ﴿٦﴾</p>
+                <p class="arabic-text">صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ ﴿٧﴾</p>
+                
+                <div class="locked-apps">
+                    <p>🚫 Locked: Instagram, TikTok</p>
+                </div>
+                <button class="btn btn-link" data-target="home-screen">End Early</button>
+            </div>
+            <div class="screen focus-complete-screen">
+                <div class="focus-complete-animation">
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                </div>
+                <h2>Masha'Allah!</h2>
+                <p>Session Complete</p>
+                <div class="card session-summary">
+                    <p>⏱ 15 min focused</p>
+                    <p>📖 25 ayahs read</p>
+                    <p>📿 +5,230 Hasanat</p>
+                </div>
+                <div class="streak-counter">
+                    <p>🔥 Streak: 15 days!</p>
+                </div>
+                <div class="unlocked-achievement">
+                    <h4>Unlock Earned</h4>
+                    <p>🏅 Focus Master Badge</p>
+                </div>
+                <button class="btn btn-primary">Share to Feed</button>
+                <button class="btn btn-secondary" data-target="focus-setup-screen">Start New Session</button>
+                <button class="btn btn-link" data-target="home-screen">Return Home</button>
+            </div>
+            <div class="screen profile-screen" data-nav="true">
+                <div class="screen-header">
+                    <h2 class="screen-title">Profile</h2>
+                    <a href="#" data-target="settings-screen"><ion-icon name="settings-outline"></ion-icon></a>
+                </div>
+                <div class="profile-header">
+                    <ion-icon name="person-circle-outline"></ion-icon>
+                    <h3>Ahmed</h3>
+                    <p>@ahmed_reads</p>
+                </div>
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <p>🔥 15</p>
+                        <span>Streak</span>
+                    </div>
+                    <div class="stat-item">
+                        <p>📿 1.2M</p>
+                        <span>Hasanat</span>
+                    </div>
+                    <div class="stat-item">
+                        <p>👥 120</p>
+                        <span>Followers</span>
+                    </div>
+                </div>
+                <div class="list-view">
+                    <a href="#" class="list-item" data-target="groups-screen">
+                        <ion-icon name="people-outline"></ion-icon>
+                        <span>Groups</span>
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </a>
+                    <a href="#" class="list-item" data-target="achievements-screen">
+                        <ion-icon name="ribbon-outline"></ion-icon>
+                        <span>Achievements</span>
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </a>
+                     <a href="#" class="list-item" data-target="bookmarks-screen">
+                        <ion-icon name="bookmark-outline"></ion-icon>
+                        <span>Bookmarks</span>
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </a>
+                </div>
+            </div>
+            <div class="screen groups-screen" data-nav="true">
+                 <div class="screen-header">
+                    <a href="#" data-target="profile-screen"><ion-icon name="arrow-back-outline"></ion-icon></a>
+                    <h2 class="screen-title">Groups</h2>
+                    <ion-icon name="add-circle-outline"></ion-icon>
+                </div>
+                <div class="tabs">
+                    <button class="tab-link active">My Groups</button>
+                    <button class="tab-link">Discover</button>
+                </div>
+                <div class="list-view">
+                    <a href="#" class="list-item">
+                        <ion-icon name="people-circle-outline"></ion-icon>
+                        <span>Masjid Al-Noor</span>
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </a>
+                    <a href="#" class="list-item">
+                        <ion-icon name="people-circle-outline"></ion-icon>
+                        <span>Family Quran</span>
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </a>
+                </div>
+            </div>
+            <div class="screen settings-screen" data-nav="true">
+                <div class="screen-header">
+                    <a href="#" data-target="profile-screen"><ion-icon name="arrow-back-outline"></ion-icon></a>
+                    <h2 class="screen-title">Settings</h2>
+                </div>
+                <div class="list-view">
+                    <a href="#" class="list-item">
+                        <span>Edit Profile</span>
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </a>
+                    <a href="#" class="list-item">
+                        <span>Notifications</span>
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </a>
+                    <a href="#" class="list-item">
+                        <span>Theme</span>
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </a>
+                     <a href="#" class="list-item" data-target="welcome-screen">
+                        <span>Log Out</span>
+                        <ion-icon name="log-out-outline"></ion-icon>
+                    </a>
+                </div>
+            </div>
+            <div class="screen achievements-screen">
+                <div class="screen-header">
+                    <a href="#" data-target="profile-screen"><ion-icon name="arrow-back-outline"></ion-icon></a>
+                    <h2 class="screen-title">Achievements</h2>
+                </div>
+                <p>Achievements Coming Soon!</p>
+            </div>
+            <div class="screen bookmarks-screen">
+                <div class="screen-header">
+                    <a href="#" data-target="profile-screen"><ion-icon name="arrow-back-outline"></ion-icon></a>
+                    <h2 class="screen-title">Bookmarks</h2>
+                </div>
+                <p>Bookmarks Coming Soon!</p>
+            </div>
+        </main>
+        <nav id="bottom-nav">
+            <a href="#" class="nav-item active" data-page="home">
+                <ion-icon name="home-outline"></ion-icon>
+                <span>Home</span>
+            </a>
+            <a href="#" class="nav-item" data-page="feed">
+                <ion-icon name="newspaper-outline"></ion-icon>
+                <span>Feed</span>
+            </a>
+            <a href="#" class="nav-item" data-page="quran-index">
+                <ion-icon name="book-outline"></ion-icon>
+                <span>Qur'an</span>
+            </a>
+            <a href="#" class="nav-item" data-page="progress">
+                <ion-icon name="stats-chart-outline"></ion-icon>
+                <span>Progress</span>
+            </a>
+            <a href="#" class="nav-item" data-page="profile">
+                <ion-icon name="person-outline"></ion-icon>
+                <span>Profile</span>
+            </a>
+        </nav>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
